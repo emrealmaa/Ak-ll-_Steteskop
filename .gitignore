@@ -1,0 +1,9 @@
+﻿audio/
+archive/
+Kalp_Veri_Seti/
+ses/
+*.mp4
+temp_*.png
+__pycache__/
+build/
+link.txt
