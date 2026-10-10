@@ -1,6 +1,4 @@
-<p align="center"><img src="docs/gorseller/logo.jpg" width="160" alt="Akıllı Steteskop logosu"></p>
-
-# Akıllı Steteskop
+<h1 align="center"><img src="docs/gorseller/github-banner.jpeg" alt="Akıllı Steteskop" width="100%"></h1>
 
 Makine öğrenmesi tabanlı akıllı steteskop: akciğer ve kalp seslerini analiz edip
 kişinin sağlık durumu hakkında **ön bilgi** veren bir araç. Proje; sinyal işleme,
