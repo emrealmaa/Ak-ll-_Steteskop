@@ -37,6 +37,12 @@ Doğrulanan varsayımlar: bekçi sınıf sırası `[Lung_Sound, Noise]`, kalp s�
 
 ### Model kalitesi (öncelikli)
 - [ ] **Hasta bazlı veri bölme ile yeniden eğitim.** Şu anki doğrulama başarısı (~%97) veri sızıntısı içeriyor; gerçek doğruluk ~%60
+  - **Not (model dosyaları):** Yeni modeli commit etmeden **önce** `git lfs install && git lfs track "*.h5"` çalıştırıp
+    `.gitattributes` dosyasını commit edin. Böylece yeni model sürümleri git geçmişini büyütmez
+    (her yeniden eğitim aksi halde ~26 MB'ı kalıcı olarak ekler; GitHub 100 MB üstü dosyaları reddeder).
+    Mevcut geçmişe dokunulmaz, force push gerekmez. Repoyu klonlayanların `git-lfs` kurması gerekir;
+    GitHub'ın ücretsiz LFS kotası ~1 GB depolama ve aylık ~1 GB indirme ile sınırlı.
+    Alternatif: modelleri GitHub Releases / Hugging Face'te tutup bir `steteskop indir` komutuyla indirmek.
 - [ ] Bağımsız bir test seti ile gerçek doğruluk, duyarlılık ve özgüllük ölçümü; `config.yaml` → `bilinen_dogruluk`
 - [ ] Kalp sesi bekçisinin eğitilmesi (`egitim/model_egitimi/kalp_bekci_egit.py`) ve `config.yaml`'a eklenmesi
 - [ ] Akciğer / kalp tür ayrımı yapan bir model (kullanıcının `--tip` belirtme zorunluluğu kalkar)
@@ -47,7 +53,7 @@ Doğrulanan varsayımlar: bekçi sınıf sırası `[Lung_Sound, Noise]`, kalp s�
 ### Entegrasyon
 - [ ] MCP sunucusu (`analyze_auscultation` aracı); Claude Desktop ve diğer agent'lar için
 - [ ] ESP32 + Bluetooth ile kayıt alıp `ses/` klasörüne yazan alıcı
-- [ ] Model dosyalarının Git LFS'e taşınması (~43 MB)
+- [ ] Model dosyaları için Git LFS: şu an gerekli değil (~43 MB); yeniden eğitimle birlikte açılacak (yukarıdaki nota bakın)
 
 ### Donanım
 - [ ] ESP32 tabanlı steteskop prototipi (mikrofon, ön yükselteç, Bluetooth ses aktarımı)
