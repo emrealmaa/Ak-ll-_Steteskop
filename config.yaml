@@ -1,0 +1,54 @@
+# Akıllı Steteskop — model kayıt defteri
+#
+# Sınıf sıraları, eğitimde kullanılan klasör adlarının ALFABETİK sırasıdır
+# (tf.keras.utils.image_dataset_from_directory bu sırayı kullanır). Bu bilgi .h5
+# dosyalarının içinde saklanmaz; model yeniden eğitilirse buradaki liste de
+# eğitim çıktısındaki "Sınıflar: [...]" satırına göre güncellenmelidir.
+#
+# Yollar bu dosyanın bulunduğu klasöre göredir.
+
+parca_suresi_sn: 5
+
+modeller:
+  akciger:
+    ad: akilli_steteskop_final_model
+    dosya: modeller/akilli_steteskop_final_model.h5
+    egitim_betigi: egitim/model_egitimi/akciger_modeli_egit.py
+    goruntu: hibrit            # üst: STFT spektrogram, alt: 13 MFCC (10x10 inç)
+    filtre: null
+    bolutleme: ardisik         # 5 sn'lik ardışık, örtüşmeyen parçalar
+    siniflar: [Asthma, Bronchial_Disease, COPD, Healthy, Pneumonia]
+    etiketler:
+      Asthma: Astım
+      Bronchial_Disease: Bronşiyal hastalık (bronşit / bronşiektazi)
+      COPD: KOAH
+      Healthy: Sağlıklı
+      Pneumonia: Zatürre (pnömoni)
+    saglikli_sinif: Healthy
+    bilinen_dogruluk: 0.60     # gerçek kayıtlarda gözlenen; eğitim grafiğindeki ~%97 veri sızıntısı içerir
+    bekci: akciger_bekci
+
+  kalp:
+    ad: kalp_modeli (CRNN)
+    dosya: modeller/kalp_modeli.h5
+    egitim_betigi: egitim/model_egitimi/kalp_crnn_egit.py
+    goruntu: kalp_spektrogram  # yalnızca STFT spektrogram, magma, 5x5 inç
+    filtre: bant_gecir_20_1000 # Butterworth 4. derece, tüm kayda bölütlemeden önce
+    bolutleme: ortusmeli       # 5 sn pencere, 2.5 sn kaydırma
+    siniflar: [Hasta, Normal]
+    etiketler:
+      Hasta: Anormal kalp sesi (üfürüm / ritim bozukluğu şüphesi)
+      Normal: Normal kalp sesi
+    saglikli_sinif: Normal
+    bilinen_dogruluk: null     # bağımsız bir test setinde ölçülmedi
+    bekci: null                # kalp sesi bekçisi (bekci_kalp_modeli.h5) repoda yok
+
+bekciler:
+  akciger_bekci:
+    ad: bekci_modeli
+    dosya: modeller/bekci_modeli.h5
+    egitim_betigi: egitim/model_egitimi/akciger_bekci_egit.py
+    goruntu: hibrit
+    siniflar: [Lung_Sound, Noise]
+    gecerli_sinif: Lung_Sound
+    esik: 0.5                  # gecerli_sinif olasılığı bunun altındaysa parça gürültü sayılır

@@ -1,9 +1,23 @@
-﻿audio/
+# Python / uv
+.venv/
+__pycache__/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Ham veri setleri (repoya eklenmez)
+audio/
 archive/
 Kalp_Veri_Seti/
-ses/
-*.mp4
+
+# Analiz girdileri ve çıktıları
+ses/*
+!ses/README.md
+raporlar/
 temp_*.png
-__pycache__/
-build/
+
+# Diğer
+*.mp4
+.DS_Store
 link.txt

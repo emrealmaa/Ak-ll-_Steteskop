@@ -1,0 +1,34 @@
+[project]
+name = "akilli-steteskop"
+version = "0.1.0"
+description = "Steteskop ses kayıtlarından akciğer/kalp sesi sınıflandırması yapan, agent'lar (Claude Code vb.) tarafından çağrılabilen analiz aracı"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    # Modeller Keras 3.12 ile kaydedildi; daha eski Keras sürümleri .h5 dosyalarını açamaz.
+    "keras>=3.12",
+    "tensorflow>=2.20",
+    "librosa>=0.10",
+    "soundfile>=0.12",
+    "scipy>=1.11",
+    "matplotlib>=3.8",
+    "numpy>=1.26",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+steteskop = "steteskop.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["steteskop"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["model: gerçek .h5 modellerini yükleyen (yavaş) testler"]
