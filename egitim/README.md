@@ -18,13 +18,11 @@ dosyanın başındaki `AYARLAR` bölümündeki yollar düzenlenmelidir.
 
 Eşleştirme, `.h5` dosyalarındaki katman yapısı incelenerek yapıldı.
 
-## Çıktısı repoda olmayan betikler
+## Planlanan model
 
-| Betik | Açıklama |
-|---|---|
-| `model_egitimi/kalp_bekci_egit.py` | Kalp sesi bekçisi (`bekci_kalp_modeli.h5`). Model dosyası repoda yok; eğitilip `config.yaml`'a eklenirse kalp kayıtlarında gürültü ayıklanabilir. |
-| `model_egitimi/akciger_bekci_v2_egit.py` | Akciğer bekçisinin alternatif sürümü (Dense 128, dropout yok). |
-| `model_egitimi/kalp_cnn_egit.py` + `veri_hazirlama/kalp_hibrit_veri_cogaltma.py` | Kalp için düz CNN (hibrit görüntü). Kullanımdaki model CRNN sürümü. |
+`model_egitimi/kalp_bekci_egit.py` kalp sesi bekçisini (`bekci_kalp_modeli.h5`) eğitir. Model
+dosyası henüz repoda yok; eğitilip `config.yaml`'a eklenirse kalp kayıtlarında da gürültü
+ayıklanabilir.
 
 ## Veri kaynakları
 - **ICBHI 2017 Respiratory Sound Database:** akciğer sesleri ve `patient_diagnosis.csv`

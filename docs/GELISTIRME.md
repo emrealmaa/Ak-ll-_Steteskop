@@ -18,6 +18,7 @@ Kullanıcı bir ses kaydını `ses/` klasörüne koyup Claude Code'a yolunu söy
 - [x] `uv` ile tekrarlanabilir kurulum (Python 3.12, TensorFlow 2.21, Keras ≥3.12)
 - [x] Birim ve entegrasyon testleri (`uv run pytest`)
 - [x] Repo düzeni: `modeller/`, `egitim/`, `donanim/`, `docs/`, `ses/`; açıklayıcı dosya adları
+- [x] Kullanılmayan betikler (eski testler, alternatif bekçi, düz CNN kalp modeli) ve yanıltıcı eğitim grafiği kaldırıldı; hepsi git geçmişinde duruyor
 
 ### Doğrulama sonuçları
 Bu kayıtlar büyük olasılıkla eğitim setinde de bulunduğu için aşağıdaki sonuçlar doğruluk
