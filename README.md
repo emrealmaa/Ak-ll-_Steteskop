@@ -140,3 +140,17 @@ tests/         birim ve entegrasyon testleri
 uv run pytest            # hızlı birim testleri + modelli entegrasyon testleri
 uv run pytest -m "not model"   # yalnız hızlı testler
 ```
+
+## Lisans
+
+Bu proje, kullanıcının seçimine bağlı olarak aşağıdaki iki lisanstan biriyle kullanılabilir:
+
+- Apache License 2.0 ([`LICENSE-APACHE`](LICENSE-APACHE))
+- MIT License ([`LICENSE-MIT`](LICENSE-MIT))
+
+Copyright © 2026 Emre Alma, Enes Öztürk.
+
+Lisanslar yazılımı kapsar. `modeller/` altındaki ağırlıklar üçüncü taraf veri setleriyle eğitildi
+ve bu veri setlerinin kendi koşulları geçerlidir (ör. ESC-50 ticari olmayan kullanım içindir).
+Ayrıntı ve atıflar [`NOTICE`](NOTICE) dosyasındadır.
+

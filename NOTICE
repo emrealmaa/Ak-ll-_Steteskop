@@ -1,0 +1,29 @@
+Akıllı Steteskop
+Copyright 2026 Emre Alma, Enes Öztürk
+
+Bu proje Apache License 2.0 (LICENSE-APACHE) ya da MIT License (LICENSE-MIT)
+koşullarından biri seçilerek kullanılabilir.
+
+Tıbbi uyarı
+-----------
+Bu yazılım bir tıbbi cihaz değildir ve teşhis ya da tedavi amacıyla
+kullanılamaz. Model çıktıları deneysel tahminlerdir; yalnızca bilgilendirme ve
+araştırma amaçlıdır.
+
+Eğitim verileri
+---------------
+modeller/ klasöründeki ağırlıklar aşağıdaki üçüncü taraf veri setleriyle
+eğitilmiştir. Bu veri setleri yazılım lisansının kapsamında değildir; her biri
+kendi lisans ve atıf koşullarına tabidir. Modelleri ya da veri setlerini
+yeniden dağıtmadan veya ticari amaçla kullanmadan önce bu koşulları kontrol edin.
+
+- ICBHI 2017 Respiratory Sound Database
+  https://bhichallenge.med.auth.gr/
+- ESC-50: Dataset for Environmental Sound Classification (K. J. Piczak)
+  https://github.com/karolpiczak/ESC-50
+  Not: ESC-50 ticari olmayan kullanım lisansıyla (CC BY-NC) yayımlanmıştır.
+- Kaggle pnömoni / astım solunum sesi arşivi
+- Kalp sesleri: KALP_VERI_SETI_FINAL (kaynağı henüz belgelenmedi)
+
+Modellerin doğrulanmasında ayrıca PhysioNet/CinC Challenge 2016 kalp sesi
+kayıtları kullanılmıştır (https://physionet.org/content/challenge-2016/).

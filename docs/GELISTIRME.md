@@ -18,6 +18,7 @@ Kullanıcı bir ses kaydını `ses/` klasörüne koyup Claude Code'a yolunu söy
 - [x] `uv` ile tekrarlanabilir kurulum (Python 3.12, TensorFlow 2.21, Keras ≥3.12)
 - [x] Birim ve entegrasyon testleri (`uv run pytest`)
 - [x] Repo düzeni: `modeller/`, `egitim/`, `donanim/`, `docs/`, `ses/`; açıklayıcı dosya adları
+- [x] Lisans: `Apache-2.0 OR MIT` (iki lisans, kullanıcı seçer); `NOTICE` dosyasında tıbbi uyarı ve eğitim veri seti atıfları
 - [x] Kullanılmayan betikler (eski testler, alternatif bekçi, düz CNN kalp modeli) ve yanıltıcı eğitim grafiği kaldırıldı; hepsi git geçmişinde duruyor
 
 ### Doğrulama sonuçları
@@ -49,6 +50,8 @@ Doğrulanan varsayımlar: bekçi sınıf sırası `[Lung_Sound, Noise]`, kalp s�
 - [ ] Görüntü (PNG) yerine doğrudan mel-spektrogram ve MFCC dizileriyle eğitim: daha hızlı, bilgi kaybı yok
 - [ ] Örnekleme hızı standardizasyonu (eğitim ve çıkarımda tek bir sr)
 - [ ] Eğitim betiklerinin `steteskop.ozellik` fonksiyonlarını kullanacak şekilde yeniden yazılması
+- [ ] Kalp eğitim verisinin (`KALP_VERI_SETI_FINAL`) kaynağının ve lisansının belgelenmesi (`NOTICE`)
+- [ ] Bekçinin ESC-50 (CC BY-NC) yerine ticari kullanıma açık bir gürültü verisiyle yeniden eğitilmesi (modellerin ticari kullanımı gerekirse)
 
 ### Entegrasyon
 - [ ] MCP sunucusu (`analyze_auscultation` aracı); Claude Desktop ve diğer agent'lar için
